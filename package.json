@@ -3,18 +3,33 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/cli": "^7.7.7",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react-app": "^9.1.0",
+    "browser-refresh": "^1.7.3",
+    "css-loader": "^3.4.0",
+    "express": "^4.17.1",
+    "live-server": "^1.2.1",
+    "mini-css-extract-plugin": "^0.9.0",
+    "npm-run-all": "^4.1.5",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0"
+    "react-scripts": "3.3.0",
+    "react-svg-loader": "^3.0.3",
+    "svg-inline-loader": "^0.8.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-node-externals": "^1.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build-dev": "SET NODE_ENV=development&& webpack --mode=development --watch=true",
+    "start-dev": "browser-refresh ./assets/index.js",
+    "go-dev": "run-p build-dev start-dev"
   },
   "eslintConfig": {
     "extends": "react-app"

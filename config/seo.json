@@ -1,0 +1,7 @@
+{
+    "title": "Website title",
+    "description": "This is the website description",
+    "autorName": "My Name",
+    "robots":"index, follow",
+    "language":"en"
+}
