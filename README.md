@@ -239,4 +239,3 @@ As a bonus I have included a json configuration file with relevant SEO informati
 
 
 
-Error: [BABEL] D:\OneDrive\ProjectesProgramacio\REACT_Templates\SSR\server\index.js: Using `babel-preset-react-app` requires that you specify `NODE_ENV` or `BABEL_ENV` environment variables. Valid values are "development", "test", and "production". Instead, received: undefined.
