@@ -1,23 +1,25 @@
 const path = require('path');
-const nodeExternals = require('webpack-node-externals');
+//const nodeExternals = require('webpack-node-externals');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/index.js',
-  target: 'node',
-  externals: [nodeExternals()],
+  target: 'web',
+  //externals: [nodeExternals()],
+  plugins:  [new MiniCssExtractPlugin()],
   watchOptions:{
     aggregateTimeout:1000,
     ignored: /node_modules/
   },
   output: {
     path: path.resolve('assets'),
-    filename: 'server.js'
+    filename: 'client.js'
   },
   module: {
     rules: [
         {
             test: /\.css$/i,
-            use: 'ignore-loader'
+            use: [MiniCssExtractPlugin.loader, 'css-loader']
         },
         {
             test: /\.svg$/,
@@ -25,7 +27,7 @@ module.exports = {
         },
         {
             test: /\.(js|jsx)$/,
-            exclude:/node_modules/,
+            exclude: ['/node_modules/', path.resolve('./server')],
             use: 'babel-loader'
         }
     ]

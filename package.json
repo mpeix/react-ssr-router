@@ -14,11 +14,13 @@
     "browser-refresh": "^1.7.3",
     "css-loader": "^3.4.0",
     "express": "^4.17.1",
+    "ignore-loader": "^0.1.2",
     "live-server": "^1.2.1",
     "mini-css-extract-plugin": "^0.9.0",
     "npm-run-all": "^4.1.5",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
     "react-svg-loader": "^3.0.3",
     "svg-inline-loader": "^0.8.0",
@@ -27,9 +29,10 @@
     "webpack-node-externals": "^1.7.2"
   },
   "scripts": {
-    "build-dev": "SET NODE_ENV=development&& webpack --mode=development --watch=true",
-    "start-dev": "browser-refresh ./assets/index.js",
-    "go-dev": "run-p build-dev start-dev"
+    "build-server-dev": "SET NODE_ENV=development&& webpack --mode=development --watch=true",
+    "build-client-dev": "SET NODE_ENV=development&& webpack --config webpack.client.config.js --mode=development --watch=true",
+    "start-dev": "browser-refresh ./assets/server.js",
+    "go-dev": "run-p build-server-dev build-client-dev start-dev"
   },
   "eslintConfig": {
     "extends": "react-app"
